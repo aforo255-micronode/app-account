@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment-account
+  labels:
+    app: service-account
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service-account
+  template:
+    metadata:
+      labels:
+        app: service-account
+    spec:
+      containers:
+      - name: app-account
+        image: jeanflores2c93/aforo255-nodejs-account:latest
+        ports:
+        - containerPort: 5001
+        env:
+        - name: NACOS_SERVERADDR
+          value: "161.35.233.217:8848"
+        - name: NACOS_NAMESPACE
+          value: "aforo255"
+        - name: NACOS_IDENTITYKEY
+          value: "nacos"
+        - name: NACOS_IDENTITYVALUE
+          value: "nacos"
+        - name: NACOS_ENV
+          value: "PROD"

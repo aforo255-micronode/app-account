@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: app-service-account
+spec:
+  type: LoadBalancer
+  selector:
+    app: service-account
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 5002
+    name: http
