@@ -36,7 +36,7 @@ apiVersion: v1
 metadata:
   name: app-service-account
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: service-account
   ports:
