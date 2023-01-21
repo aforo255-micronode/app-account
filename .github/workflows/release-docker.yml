@@ -8,7 +8,7 @@ on:
  
 env:
   DOCKER_HUB_USER: ${{ secrets.DOCKER_HUB_USER }}
-  DOCKER_IMAGE_NAME: aforo255-nodejs-security
+  DOCKER_IMAGE_NAME: aforo255-nodejs-account
  
 jobs:
   docker:
